@@ -1,0 +1,453 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400700&display=swap");
+@import "./reset";
+
+// Variables and class
+$blue: #564aff;
+$grey: #707070;
+
+.font-bold {
+  font-weight: bold;
+}
+
+.mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.w-full {
+  width: 100%;
+}
+// end of variables and class
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #fbfbfb;
+}
+
+.container {
+  @extend .w-full;
+  @extend .mx-auto;
+  padding: 15px;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  color: $blue;
+  @extend .font-bold;
+  font-size: 24px;
+  margin-bottom: 36px;
+}
+
+h2 {
+  color: $blue;
+  @extend .font-bold;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+header {
+  max-width: 400px;
+  z-index: 50;
+  position: sticky;
+  top: 0;
+  background-color: white;
+
+  a {
+    color: white;
+    @extend .font-bold;
+    font-size: 16px;
+  }
+
+  .logo {
+    width: 174px;
+    margin-bottom: 100px;
+    @extend .mx-auto;
+  }
+
+  nav {
+    padding: 1rem;
+    transition-duration: 300ms;
+
+    &.active {
+      position: fixed;
+      min-height: 100vh;
+      width: 75%;
+      background-color: $blue;
+      padding: 2rem;
+
+      .button {
+        position: absolute;
+        top: 2rem;
+        right: 0.25rem;
+      }
+
+      .menu {
+        display: block;
+      }
+
+      .menu-toggle span {
+        background-color: white;
+      }
+
+      .menu-toggle span:first-child {
+        margin-top: -1rem;
+        rotate: 45deg;
+      }
+
+      .menu-toggle span:nth-child(2) {
+        opacity: 0;
+        margin: 0;
+      }
+
+      .menu-toggle span:last-child {
+        @apply -rotate-45 -mt-3.5;
+        rotate: -45deg;
+        margin-top: -1rem;
+      }
+    }
+
+    .menu-toggle {
+      span {
+        display: block;
+        height: 0.25rem;
+        width: 2.25rem;
+        background-color: black;
+        transition-duration: 300ms;
+
+        &:not(:last-child) {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+  }
+
+  .menu {
+    display: none;
+  }
+}
+
+.interface {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  .arrow {
+    color: $grey;
+    width: 50px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .btn {
+    background: $blue;
+    border-radius: 3px;
+    padding: 10px;
+    color: white;
+  }
+  .bull {
+    padding: 4px;
+    border-radius: 17px;
+    width: fit-content;
+    color: white;
+    text-align: center;
+  }
+
+  .col-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  .border-price {
+    border: 1px solid $blue;
+    border-radius: 3px;
+    padding: 10px;
+    width: 100px;
+
+    input {
+      @extend .w-full;
+      text-align: center;
+    }
+  }
+
+  p {
+    color: $grey;
+    font-size: 16px;
+  }
+
+  .product-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .product-image {
+    background-color: white;
+    box-shadow: 0px 2px 5px #0000001a;
+    border-radius: 3px;
+    padding: 3rem 5rem;
+    height: 400px;
+    display: flex;
+
+    figure {
+      margin: auto;
+      width: 12rem;
+    }
+  }
+
+  .product-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 500px;
+  }
+
+  table {
+    @extend .w-full;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    color: $grey;
+    font-size: 12px;
+
+    > * {
+      --space-y-reverse: 0;
+      margin-top: calc(16px * calc(1 - var(--space-y-reverse)));
+      margin-bottom: calc(16px * var(--space-y-reverse));
+    }
+
+    .bull {
+      @extend .w-full;
+    }
+
+    thead {
+      background: $blue;
+      color: white;
+    }
+
+    tr {
+      border-radius: 3px;
+      box-shadow: 0px 2px 5px #0000001a;
+      text-align: left;
+    }
+
+    th,
+    td {
+      padding: 8px;
+    }
+  }
+}
+
+.blue {
+  background: #0057ff;
+}
+
+.green {
+  background: #32b436;
+}
+
+.orange {
+  background: #ff8a00;
+}
+
+.red {
+  background: #ff004e;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 72px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  header {
+    .logo {
+      width: 250px;
+      margin-bottom: 115px;
+    }
+
+    nav {
+      &.active {
+        padding: 5rem;
+
+        .button {
+          right: 2rem;
+        }
+      }
+    }
+  }
+
+  main {
+    .arrow {
+      width: 76px;
+      margin-bottom: 2rem;
+    }
+    .col-price {
+      margin-bottom: 50px;
+    }
+
+    .bull {
+      padding: 5px 13px;
+      text-align: initial;
+    }
+
+    .padding {
+      padding: 50px 30px;
+    }
+
+    .product-content {
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .product-infos {
+      width: 50%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .tva {
+        width: 200px;
+      }
+    }
+
+    .product-image {
+      width: 50%;
+    }
+
+    table {
+      font-size: 16px;
+
+      .bull {
+        width: fit-content;
+      }
+
+      th,
+      td {
+        padding: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  main {
+    .padding {
+      padding: 70px 50px;
+    }
+
+    .col-price {
+      justify-content: flex-start;
+      gap: 50px;
+    }
+
+    .product-infos {
+      .tva {
+        width: fit-content;
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+  header {
+    width: 20%;
+    padding: 60px 50px;
+    display: block;
+    background: $blue;
+
+    .button {
+      display: none;
+    }
+
+    .logo {
+      width: 174px;
+    }
+
+    nav {
+      &.active {
+        padding: 1rem;
+      }
+    }
+
+    .menu {
+      display: block;
+      position: fixed;
+    }
+
+    nav {
+      &.active {
+        padding: 1rem;
+      }
+    }
+  }
+
+  .interface {
+    flex-direction: row;
+  }
+
+  main {
+    width: 80%;
+
+    .arrow {
+      margin: 0;
+      position: absolute;
+      top: 4rem;
+    }
+
+    .product-description {
+      width: 250px;
+    }
+    .product-image {
+      height: 550px;
+
+      figure {
+        width: 17rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
