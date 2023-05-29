@@ -98,12 +98,12 @@ productService.getProduct(productId);
                   <span class="font-bold">Prix</span> (inclut la TVA):
                   {{ productHelper.getProductTVA(product) }} €
                 </p>
-                <div
+                <!-- <div
                   v-if="productBackup && productBackup.price !== product.price"
                   class="alert"
                 >
                   <p>Ancien prix : {{ productBackup.price }} €</p>
-                </div>
+                </div> -->
               </div>
             </div>
             <div class="flex">
