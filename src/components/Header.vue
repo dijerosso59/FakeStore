@@ -2,9 +2,12 @@
 import { RouterLink } from "vue-router";
 import { ref } from "vue";
 
+// Définition d'une variable réactive sidebarVisible en utilisant ref(), initialement définie comme étant fausse (invisible)
 const sidebarVisible = ref(false);
 
+// Fonction toggleSidebar appelée lors du basculement de la visibilité de la barre latérale
 function toggleSidebar() {
+  // Inversion de la valeur de sidebarVisible en utilisant la valeur actuelle (true -> false, false -> true)
   sidebarVisible.value = !sidebarVisible.value;
 }
 </script>
